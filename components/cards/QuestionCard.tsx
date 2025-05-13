@@ -45,7 +45,7 @@ const QuestionCard = ({
           isAuthor
         />
 
-        <div className="flex items-center gap-3 max-sm:flex-wrap max-sm:justify-start">
+        <div className="flex items-center gap-3 max-sm:flex-art">
           <Metric
             imgUrl="/icons/like.svg"
             alt="like"
