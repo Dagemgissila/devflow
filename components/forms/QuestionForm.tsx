@@ -1,5 +1,4 @@
 "use client";
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { MDXEditorMethods } from "@mdxeditor/editor";
 import dynamic from "next/dynamic";
@@ -91,20 +90,16 @@ const QuestionForm = () => {
           control={form.control}
           name="title"
           render={({ field }) => (
-            <FormItem className="flex w-full flex-col">
+            <FormItem className="w-full flex flex-col">
               <FormLabel className="paragraph-semibold text-dark400_light800">
                 Question Title <span className="text-primary-500">*</span>
               </FormLabel>
               <FormControl>
                 <Input
-                  className="paragraph-regular background-light700_dark300 light-border-2 text-dark300_light700 no-focus min-h-[56px] border"
+                  className="paragraph-regular background-light700_dark300 text-dark300_light700 no-focus light-border-2 min-h-[56px] border"
                   {...field}
                 />
               </FormControl>
-              <FormDescription className="body-regular mt-2.5 text-light-500">
-                Be specific and imagine you&apos;re asking a question to another
-                person.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}

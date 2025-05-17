@@ -9,7 +9,6 @@ interface Props {
   title: string;
   href?: string;
   textStyles: string;
-  imgStyles?: string;
   isAuthor?: boolean;
 }
 
@@ -20,7 +19,6 @@ const Metric = ({
   title,
   href,
   textStyles,
-  imgStyles,
   isAuthor,
 }: Props) => {
   const metricContent = (
@@ -30,7 +28,7 @@ const Metric = ({
         width={16}
         height={16}
         alt={alt}
-        className={`rounded-full object-contain ${imgStyles} `}
+        className={`rounded-full object-contain  `}
       />
 
       <p className={`${textStyles} flex items-center gap-1`}>

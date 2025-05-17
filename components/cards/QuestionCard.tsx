@@ -1,7 +1,6 @@
 import ROUTES from "@/constants/routes";
 import { getTimeStamp } from "@/lib/utils";
 import Link from "next/link";
-import { title } from "process";
 import React from "react";
 import TagCard from "./TagCard";
 import Metric from "../Metric";
@@ -45,7 +44,7 @@ const QuestionCard = ({
           isAuthor
         />
 
-        <div className="flex items-center gap-3 max-sm:flex-art">
+        <div className="flex items-center gap-3 max-sm:flex-start">
           <Metric
             imgUrl="/icons/like.svg"
             alt="like"
