@@ -8,6 +8,7 @@ import ROUTES from "@/constants/routes";
 import handleError from "@/lib/handlers/error";
 import { ValidationError } from "@/lib/http-errors";
 import dbConnect from "@/lib/mongosee";
+import { api } from "@/lib/api";
 
 const questions = [
   {
@@ -52,7 +53,7 @@ const questions = [
 
 const test = async () => {
   try {
-    await dbConnect();
+    return await api.users.getAll();
   } catch (error) {
     return handleError(error);
   }
@@ -63,7 +64,8 @@ interface SearchParams {
 }
 
 const Home = async ({ searchParams }: SearchParams) => {
-  await test();
+  const users = await test();
+  console.log(users);
 
   const { query = "", filter = "" } = await searchParams;
 
