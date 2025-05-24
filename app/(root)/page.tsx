@@ -9,6 +9,7 @@ import handleError from "@/lib/handlers/error";
 import { ValidationError } from "@/lib/http-errors";
 import dbConnect from "@/lib/mongosee";
 import { api } from "@/lib/api";
+import { auth } from "@/auth";
 
 const questions = [
   {
@@ -64,9 +65,8 @@ interface SearchParams {
 }
 
 const Home = async ({ searchParams }: SearchParams) => {
-  const users = await test();
-  console.log(users);
-
+  const session = await auth();
+  console.log(session);
   const { query = "", filter = "" } = await searchParams;
 
   const filteredQuestions = questions.filter((question) => {
