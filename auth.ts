@@ -4,6 +4,7 @@ import Google from "next-auth/providers/google";
 
 import { IAccountDoc } from "./database/account.model";
 import { api } from "./lib/api";
+import logger from "./lib/logger";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [GitHub, Google],
@@ -31,7 +32,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       return token;
     },
     async signIn({ user, profile, account }) {
-      console.log(user, profile, account);
       if (account?.type === "credentials") return true;
       if (!account || !user) return false;
 
