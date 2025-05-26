@@ -35,6 +35,7 @@ interface Params {
   question?: Question;
   isEdit?: boolean;
 }
+
 const QuestionForm = ({ question, isEdit = false }: Params) => {
   const router = useRouter();
   const editorRef = useRef<MDXEditorMethods>(null);
@@ -116,6 +117,7 @@ const QuestionForm = ({ question, isEdit = false }: Params) => {
 
         return;
       }
+
       const result = await createQuestion(data);
 
       if (result.success) {
@@ -240,7 +242,7 @@ const QuestionForm = ({ question, isEdit = false }: Params) => {
                 <span>Submitting</span>
               </>
             ) : (
-              <>{isEdit ? "Edit" : "Ask A Question"}</>
+              <>{isEdit ? "Edit" : "Ask a Question"}</>
             )}
           </Button>
         </div>
