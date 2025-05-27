@@ -145,3 +145,7 @@ export const PaginatedSearchParamsSchema = z.object({
 export const GetTagQuestionSchema = PaginatedSearchParamsSchema.extend({
   tagId: z.string().min(1, { message: "Tag Id is Required" }),
 });
+
+export const IncrementViewsSchema = z.object({
+  questionId: z.string().min(1, { message: "Question id is required" }),
+});
