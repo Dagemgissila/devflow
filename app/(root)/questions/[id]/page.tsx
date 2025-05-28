@@ -1,3 +1,9 @@
+import Link from "next/link";
+import { redirect } from "next/navigation";
+import { after } from "next/server";
+import React from "react";
+
+import AllAnswers from "@/components/answers/AllAnswers";
 import TagCard from "@/components/cards/TagCard";
 import { Preview } from "@/components/editor/Preview";
 import AnswerForm from "@/components/forms/AnswerForm";
@@ -7,10 +13,6 @@ import ROUTES from "@/constants/routes";
 import { getAnswers } from "@/lib/actions/answer.action";
 import { getQuestion, incrementViews } from "@/lib/actions/question.action";
 import { formatNumber, getTimeStamp } from "@/lib/utils";
-import Link from "next/link";
-import { redirect } from "next/navigation";
-import { after } from "next/server";
-import React from "react";
 
 const QuestionDetails = async ({ params }: RouteParams) => {
   const { id } = await params;
@@ -33,8 +35,6 @@ const QuestionDetails = async ({ params }: RouteParams) => {
     filter: "latest",
   });
 
-  console.log("answers", answersResult);
-
   const { author, createdAt, answers, views, tags, content, title } = question;
 
   return (
@@ -45,7 +45,6 @@ const QuestionDetails = async ({ params }: RouteParams) => {
             <UserAvatar
               id={author._id}
               name={author.name}
-              imageUrl={author.image}
               className="size-[22px]"
               fallbackClassName="text-[10px]"
             />
@@ -104,7 +103,16 @@ const QuestionDetails = async ({ params }: RouteParams) => {
       </div>
 
       <section className="my-5">
-        <AnswerForm questionId={id} />
+        <AllAnswers
+          data={answersResult?.answers}
+          success={areAnswersLoaded}
+          error={answersError}
+          totalAnswers={answersResult?.totalAnswers || 0}
+        />
+      </section>
+
+      <section className="my-5">
+        <AnswerForm questionId={question._id} />
       </section>
     </>
   );
