@@ -9,7 +9,7 @@ import ROUTES from "@/constants/routes";
 import { EMPTY_QUESTION } from "@/constants/states";
 import { getQuestions } from "@/lib/actions/question.action";
 import CommonFilter from "@/components/filters/CommonFilter";
-import { HomePageFilters } from "@/constants/filter";
+import { HomePageFilters } from "@/constants/filters";
 
 interface SearchParams {
   searchParams: Promise<{ [key: string]: string }>;
