@@ -11,6 +11,8 @@ import {
   HasVotedSchema,
   UpdateVoteCountSchema,
 } from "../validation";
+import { revalidatePath } from "next/cache";
+import ROUTES from "@/constants/routes";
 
 export async function updateVoteCount(
   params: UpdateVoteCountParams,
@@ -99,7 +101,14 @@ export async function createVote(
     } else {
       // If the user has not voted yet, create a new vote
       await Vote.create(
-        [{ author: userId, targetId, targetType, voteType, change: 1 }],
+        [
+          {
+            author: userId,
+            actionId: targetId,
+            actionType: targetType,
+            voteType,
+          },
+        ],
         {
           session,
         }
@@ -113,6 +122,7 @@ export async function createVote(
     await session.commitTransaction();
     session.endSession();
 
+    revalidatePath(ROUTES.QUESTION(targetId));
     return { success: true };
   } catch (error) {
     await session.abortTransaction();
