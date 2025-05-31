@@ -1,6 +1,7 @@
 interface Tag {
   _id: string;
   name: string;
+  questions?: number;
 }
 
 interface Author {
@@ -77,4 +78,8 @@ interface Collection {
   _id: string;
   author: string | Author;
   question: Question;
+}
+
+interface getUserParams {
+  userId: string;
 }
