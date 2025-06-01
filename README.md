@@ -25,15 +25,7 @@
 4. 🤸 [Quick Start](#quick-start)
 5. 🔗 [Assets](#links)
 
-## 🚨 Course
 
-This repository contains the code corresponding to an in-depth course available on our <a href="https://jsmastery.pro/" target="_blank"><b>JavaScript Mastery Pro Website</b></a>.
-
-If you prefer visual learning, this is the perfect resource for you. Follow our course to learn how to build projects like these step-by-step in a beginner-friendly manner
-
-<a href="https://www.jsmastery.pro/ultimate-next-course" target="_blank">
-  <img src="https://github.com/user-attachments/assets/54ef6cd0-1f00-4989-a6a5-3f77ca3f68a2" style="width: 150px; height: auto;" />
-</a>
 
 ## <a name="introduction">🤖 Introduction</a>
 
