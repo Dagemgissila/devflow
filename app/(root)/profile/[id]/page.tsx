@@ -3,8 +3,8 @@ import ProfileLink from "@/components/user/ProfileLink";
 import UserAvatar from "@/components/UserAvatar";
 import {
   getUser,
+  getUserAnswers,
   getUserQuestions,
-  getUsersAnswers,
   getUserStats,
   getUserTopTags,
 } from "@/lib/actions/user.action";
@@ -60,7 +60,7 @@ const Profile = async ({ params, searchParams }: RouteParams) => {
     success: userAnswersSuccess,
     data: userAnswers,
     error: userAnswersError,
-  } = await getUsersAnswers({
+  } = await getUserAnswers({
     userId: id,
     page: Number(page) || 1,
     pageSize: Number(pageSize) || 10,
