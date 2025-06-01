@@ -5,7 +5,7 @@ import React from "react";
 import TagCard from "../cards/TagCard";
 import { getHotQuestions } from "@/lib/actions/question.action";
 import DataRenderer from "../DataRenderer";
-import { getTopTags } from "@/lib/actions/tag.action";
+import { getTopTags } from "@/lib/actions/tags.action";
 
 const RightSidebar = async () => {
   const [

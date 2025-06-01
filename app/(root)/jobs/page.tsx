@@ -2,9 +2,9 @@ import JobCard from "@/components/cards/JobCard";
 import JobsFilter from "@/components/filters/JobFilter";
 import Pagination from "@/components/Pagination";
 import {
-  fetchCountries,
-  fetchJobs,
   fetchLocation,
+  fetchJobs,
+  fetchCountries,
 } from "@/lib/actions/job.action";
 
 const Page = async ({ searchParams }: RouteParams) => {
