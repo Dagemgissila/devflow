@@ -14,11 +14,7 @@
     <img src="https://img.shields.io/badge/-Open_AI-black?style=for-the-badge&logoColor=white&logo=openai&color=412991" alt="openai" />
   </div>
 
-  <h3 align="center">The Ultimate Next.js Course</h3>
 
-   <div align="center">
-     Build this project step by step with our detailed course on <a href="https://www.jsmastery.pro" target="_blank"><b>JavaScript Mastery PRO</b></a> Website. Join the JSM PRO family!
-    </div>
 </div>
 
 ## 📋 <a name="table">Table of Contents</a>
@@ -124,8 +120,8 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/JavaScript-Mastery-Pro/jsmasterypro_devflow.git
-cd jsmasterypro_devflow
+git clone https://github.com/Dagemgissila/devflow.git
+cd devflow
 ```
 
 **Installation**
