@@ -21,7 +21,7 @@ const Home = async ({ searchParams }: SearchParams) => {
 
   const { success, data, error } = await getQuestions({
     page: Number(page) || 1,
-    pageSize: Number(pageSize) || 2,
+    pageSize: Number(pageSize) || 10,
     query: query || "",
     filter: filter || "",
   });
